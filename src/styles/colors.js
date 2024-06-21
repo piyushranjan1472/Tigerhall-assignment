@@ -1,13 +1,23 @@
-const colors = {
-    primary: "#007bff",
-    secondary: "#6c757d",
-    success: "#28a745",
-    danger: "#dc3545",
-    warning: "#ffc107",
-    info: "#17a2b8",
-    light: "#f8f9fa",
-    dark: "#343a40",
-  };
+// const colors = {
+//     white:"#FFFFFF",
+//     tigerOrange_600:"#FF5900",
+//     teal_1000:"#001315",
+//     grey_900:"#383733"
+
+//   };
+  const colors = {
+    brand: {
+      600:'#FF5900',
+    },
+    teal:{
+      1000:"#001315"
+    },
+    grey:{
+      900:"#383733",
+      700:"#797670"
+    }
+
+  }
   
   export default colors;
   

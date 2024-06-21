@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: 'https://your-graphql-endpoint.com/graphql', // TODO
+  uri: 'https://api.tigerhall.net/v2/', // TODO
   cache: new InMemoryCache()
 });
 
