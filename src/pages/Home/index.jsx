@@ -34,6 +34,10 @@ function Home() {
       />
       <SimpleGrid columns={[1, 2, 3]} spacing='40px' marginTop={5}>
         <ListingCard/>
+        <ListingCard/>
+        <ListingCard/>
+        <ListingCard/>
+        <ListingCard/>
 
       </SimpleGrid>
     </HomeWrapper>

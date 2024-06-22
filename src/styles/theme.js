@@ -13,5 +13,9 @@ export const theme = extendTheme({
         }
       }
     },
+    fonts: {
+        heading: `'PP Neue Montreal', sans-serif`,
+        body: `'PP Neue Montreal', sans-serif`,
+      },
     colors
   });

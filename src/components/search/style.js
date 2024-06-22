@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SearchWrapper = styled.div`
+width: 100%;
   /* position: relative;
   width: 100%;
   .search-icon {
