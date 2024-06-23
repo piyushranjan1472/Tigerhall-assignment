@@ -1,28 +1,34 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const CONTENT_CARDS = gql`
-  query ContentCards($keywords: String!) {
+  query ContentCards ($keywords: String!) {
     contentCards(filter: { keywords: $keywords, limit: 20, types: [PODCAST] }) {
-        edges {
-            ... on Podcast {
-                name
-                image {
-                    uri
-                }
-                experts {
-                    title
-                    firstName
-                    lastName
-                    company
-                }
-                categories {
-                    name
-                }
-                updatedAt
-            }
+      edges {
+        ... on Podcast {
+          name
+          image {
+            uri
+            alt
+          }
+          experts {
+            title
+            firstName
+            lastName
+            company
+          }
+          categories {
+            name
+          }
+          length
         }
+      }
+      meta {
+        total
+        offset
+        limit
+      }
     }
-}
+  }
 `;
 
 // query ContentCards {
@@ -60,4 +66,3 @@ export const CONTENT_CARDS = gql`
 //         }
 //     }
 // }
-

@@ -5,12 +5,16 @@ import { debounce } from "../../utils/common";
 import { useLazyQuery } from "@apollo/client";
 import { CONTENT_CARDS } from "../../graphql/queries";
 import ListingCard from "../../components/listingCard";
-import { Input, InputGroup, InputLeftElement, SimpleGrid, Stack } from "@chakra-ui/react";
-import { PhoneIcon, Search2Icon, SearchIcon } from "@chakra-ui/icons";
+import { SimpleGrid } from "@chakra-ui/react";
+import ListingShimmerCard from "../../components/listingShimmerCard";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchPosts, { loading, data, error }] = useLazyQuery(CONTENT_CARDS);
+
+  useEffect(()=>{
+    searchPosts({ variables: { keywords: "" } });
+  },[])
 
   const handleSearch = useCallback(
     debounce((term) => {
@@ -32,13 +36,13 @@ function Home() {
         value={searchTerm}
         onChange={onChange}
       />
-      <SimpleGrid columns={[1, 2, 3]} spacing='40px' marginTop={5}>
-        <ListingCard/>
-        <ListingCard/>
-        <ListingCard/>
-        <ListingCard/>
-        <ListingCard/>
-
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing='40px' marginTop={5} width={'100%'}>
+      {loading && Array.from({length:10})?.map((item)=>{
+        return <ListingShimmerCard />
+      })}
+        {!loading && data?.contentCards?.edges?.map((item)=>{
+         return <ListingCard item={item} />
+        })}
       </SimpleGrid>
     </HomeWrapper>
   );
