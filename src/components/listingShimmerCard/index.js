@@ -1,4 +1,4 @@
-import { Badge, Box, Center, Flex, Image, Skeleton, Text, VStack } from '@chakra-ui/react'
+import { Box, Skeleton, VStack } from '@chakra-ui/react'
 import React from 'react'
 
 function ListingShimmerCard() {

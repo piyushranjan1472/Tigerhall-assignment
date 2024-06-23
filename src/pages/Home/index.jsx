@@ -10,7 +10,7 @@ import ListingShimmerCard from "../../components/listingShimmerCard";
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchPosts, { loading, data, error }] = useLazyQuery(CONTENT_CARDS);
+  const [searchPosts, { loading, data }] = useLazyQuery(CONTENT_CARDS);
 
   useEffect(()=>{
     searchPosts({ variables: { keywords: "" } });
@@ -40,11 +40,11 @@ function Home() {
       </Header>
       <section>
       <SimpleGrid columns={[1, 2, 3, 4]} spacing='40px' marginTop={5}>
-      {loading && Array.from({length:10})?.map((item)=>{
-        return <ListingShimmerCard />
+      {loading && Array.from({length:10})?.map((_,index)=>{
+        return <ListingShimmerCard key={index} />
       })}
-        {!loading && data?.contentCards?.edges?.map((item)=>{
-         return <ListingCard item={item} />
+        {!loading && data?.contentCards?.edges?.map((item,index)=>{
+         return <ListingCard key={index} item={item} />
         })}
       </SimpleGrid>
       </section>

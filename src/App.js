@@ -1,12 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import { ApolloProvider } from "@apollo/client";
-import { ThemeProvider } from "styled-components";
 import client from "./graphql/client";
-// import { theme } from "./styles/theme";
 import Home from "./pages/Home";
-import {  ChakraProvider,  extendTheme } from "@chakra-ui/react";
-import colors from "./styles/colors";
+import {  ChakraProvider } from "@chakra-ui/react";
 import { theme } from "./styles/theme";
 
 function App() {
