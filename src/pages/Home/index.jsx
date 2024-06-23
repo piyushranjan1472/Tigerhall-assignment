@@ -14,8 +14,10 @@ function Home() {
 
   useEffect(()=>{
     searchPosts({ variables: { keywords: "" } });
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
+  // eslint-disable-next-line
   const handleSearch = useCallback(
     debounce((term) => {
       searchPosts({ variables: { keywords: term } });
