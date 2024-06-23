@@ -37,5 +37,7 @@ View dynamic search results as you type.
 **Styling**: CSS Modules, Styled Components, Chakra-ui
 **API Requests**: GraphQl
 
+## Deployed on - https://master--tigerhall-assessment.netlify.app/
+
 
 
