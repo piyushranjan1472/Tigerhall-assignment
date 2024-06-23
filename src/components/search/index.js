@@ -6,7 +6,7 @@ import {SearchWrapper} from './style'
 function Search({ placeHolder = "", value = "", onChange = () => {} }) {
   return (
     <SearchWrapper>
-      <Stack spacing={4} width={"100%"}>
+      <Stack spacing={4} w={['244px',"531px","780px","100%"]}>
         <InputGroup>
           <InputLeftElement pointerEvents="none">
             <SearchIcon color="white" />

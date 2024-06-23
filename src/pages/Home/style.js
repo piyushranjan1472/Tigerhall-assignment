@@ -6,15 +6,17 @@ export const HomeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 26px 60px; */
-  padding: 7% 15%;
-  .content-listings{
+  padding: 7% 10%;
+  .content-listings {
     margin-top: 24px;
     display: flex;
     flex-direction: column;
     gap: 24px;
     width: 100%;
     align-items: center;
-
   }
+`;
+
+export const Header = styled.header`
+  width: 100%;
 `;

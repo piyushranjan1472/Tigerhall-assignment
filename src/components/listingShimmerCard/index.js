@@ -9,7 +9,8 @@ function ListingShimmerCard() {
     borderWidth="0px"
     borderRadius="lg"
     overflow="hidden"
-    maxW="244px"
+    width="244px"
+    height={"272px"}
     backgroundColor={"white"}
   >
     <Skeleton position="relative" height="120px" isLoaded={!loading}>

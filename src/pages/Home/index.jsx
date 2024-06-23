@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { HomeWrapper } from "./style";
+import { Header, HomeWrapper } from "./style";
 import Search from "../../components/search";
 import { debounce } from "../../utils/common";
 import { useLazyQuery } from "@apollo/client";
@@ -31,12 +31,15 @@ function Home() {
 
   return (
     <HomeWrapper>
+      <Header>
       <Search
         placeHolder="Search for the Podcast"
         value={searchTerm}
         onChange={onChange}
       />
-      <SimpleGrid columns={[1, 2, 3, 4]} spacing='40px' marginTop={5} width={'100%'}>
+      </Header>
+      <section>
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing='40px' marginTop={5}>
       {loading && Array.from({length:10})?.map((item)=>{
         return <ListingShimmerCard />
       })}
@@ -44,6 +47,7 @@ function Home() {
          return <ListingCard item={item} />
         })}
       </SimpleGrid>
+      </section>
     </HomeWrapper>
   );
 }
